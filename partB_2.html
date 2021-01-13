@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TVS Motors</title>
+    </head>
+    <style>
+        *{
+            text-align: center;
+        }
+        .menu{
+            margin-top: 20px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+        .menu p{
+            width: 250px;
+            height: 30px;
+            margin: 0 10px;
+            background-color: rgb(85, 228, 85);
+            font-size: large;
+            font-weight: bolder;
+        }
+        .menu p:hover{
+            background-color: green;
+        }
+    </style>
+    <body>
+        <h2>Hover to see TVS Apache</h2>
+        <div class="menu">
+            <p id="one" onmouseover="show(this)">Apache 160</p>
+            <p id="two" onmouseover="show(this)">Apache 160 4V</p>
+        </div>
+        <div>
+            <h2 id="m"></h2>
+            <h2 id="n"></h2>
+            <h2 id="p"></h2>
+            <h2 id="y"></h2>
+        </div>
+        <script>
+            models = [
+                {
+                    "model" : "160",
+                    "name" : "Apache 160",
+                    "price" : "Rs.1,10,100",
+                    "year" : "2016"
+                },
+                {
+                    "model" : "160 4V",
+                    "name" : "Apache 160 4V",
+                    "price" : "Rs.1,40,100",
+                    "year" : "2018"
+                }
+            ]
+            function show(tag){
+                var id = tag.getAttribute("id")
+                if(id=="one"){
+                    document.getElementById("m").innerHTML = "Model : "+models[0].model
+                    document.getElementById("n").innerHTML = "Name : "+models[0].name
+                    document.getElementById("p").innerHTML = "price : "+models[0].price
+                    document.getElementById("y").innerHTML = "Year : "+models[0].year
+                }
+                if(id=="two"){
+                    document.getElementById("m").innerHTML = "Model : "+models[1].model
+                    document.getElementById("n").innerHTML = "Name : "+models[1].name
+                    document.getElementById("p").innerHTML = "price : "+models[1].price
+                    document.getElementById("y").innerHTML = "Year : "+models[1].year
+                }
+            }
+        </script>
+    </body>
+</html>

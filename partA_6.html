@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Feedback Form</title>
+    </head>
+    <body>
+        <form>
+            <h3>Enter your name :</h3>
+            <input id="name" placeholder="Name" ><br>
+            <h3>Select your gender :</h3>
+            <input id="male" name="gender" type="radio">Male<br>
+            <input id="female" name="gender" type="radio">Female<br>
+            <input id="trans" name="gender" type="radio">Trans<br>
+            <h3>Write your feedback :</h3>
+            <textarea id="feedback" style="height: 100px; width: 350px" placeholder="Write Somthing..."></textarea><br>
+            <button type="button" onclick="show()">Display</button>
+            <h3 id="res1"></h3>
+            <h3 id="res2"></h3>
+            <h3 id="res3"></h3>
+            <h3 id="res4"></h3>
+        </form>
+        <script>
+            function show(){
+                var n = document.getElementById("name").value;
+                var g;
+                if(document.getElementById("male").checked)
+                    g = "Male";
+                if(document.getElementById("female").checked)
+                    g = "Female";
+                if(document.getElementById("trans").checked)
+                    g = "Trans Gender";
+                var f = document.getElementById("feedback").value;
+
+                document.getElementById("res1").innerHTML = "Name : "+n;
+                document.getElementById("res2").innerHTML = "Gender : "+g;
+                document.getElementById("res3").innerHTML = "Feedback : ";
+                document.getElementById("res4").innerHTML = f;
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Divisible by 3 or 7</title>
+    </head>
+    <body>
+        <h3>Enter a number : </h3>
+        <input id="num" type="number" placeholder="Number"><br>
+        <button onclick="check()">Check</button>
+        <h3 id="res1"></h3>
+        <h3 id="res2"></h3>
+        <h3 id="res3"></h3>
+        <script>
+            function check() {
+                var num = document.getElementById("num").value
+                var t = "False"
+                var s = "False"
+                var b = "False"
+
+                if(num%3==0 && num%7==0){
+                    t = "True"
+                    s = "True"
+                    b = "True"
+                }
+                if(num%3==0 && num%7!=0)
+                    t = "True"
+                if(num%3!=0 && num%7==0)
+                    s = "True"
+
+                document.getElementById("res1").innerHTML = "Divisible by 3 : "+t
+                document.getElementById("res2").innerHTML = "Divisible by 7 : "+s
+                document.getElementById("res3").innerHTML = "Divisible by 3 and 7: "+b
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Currency Converter</title>
+</head>
+<body>
+    <div>
+        <h1>Currency Converter</h1>
+        <h2>Select one option below : </h2>
+        <input type="radio" value="itod" name="choice" style="margin-left: 20px;"> INR to USD
+        <input type="radio" value="dtoi" name="choice" style="margin-left: 20px;"> USD to INR
+        <input type="radio" value="itoe" name="choice" style="margin-left: 20px;"> INR to Euro
+        <input type="radio" value="etoi" name="choice" style="margin-left: 20px;"> Euro to INR
+    </div>
+    <div>
+        <input id="value" placeholder="Enter Value here" style="margin-left: 20px;">
+        <button id="calc" style="margin-top: 20px;">Calculate</button>
+        <h2 id="res" style="margin-left: 20px;"></h2>
+    </div>
+    <script>
+        document.getElementById('calc').onclick = function(){
+            var ele = document.getElementsByName('choice');
+            var o = null;
+            var c = document.getElementById('value').value;
+            for(i=0; i<ele.length; i++){
+                if(ele[i].checked)
+                    o = ele[i].value;
+            };
+            
+            if(c=='')
+                alert("You Must Enter Value First");
+            else{
+                if(o=='itod')
+                    document.getElementById('res').innerHTML = 'converted : $ '+c/73.3;
+                else if(o=='dtoi')
+                    document.getElementById('res').innerHTML = 'converted : &#8377 '+c*73.3;
+                else if(o=='itoe')
+                    document.getElementById('res').innerHTML = 'converted : &euro; '+c/89.21;
+                else if(o=='etoi')
+                    document.getElementById('res').innerHTML = 'converted : &#8377 '+c*89.21;
+                else
+                    alert("Select Any One Option");
+            };
+        };
+
+    </script>
+</body>
+</html>

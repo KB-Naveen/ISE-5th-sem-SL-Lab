@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Simple Calculator</title>
+    </head>
+    <body>
+        <form>
+            <input id="one" placeholder="Enter First Operand">
+            <input id="two" placeholder="Enter Second Operand">
+            <h3>Select operation below :</h3>
+            <input type="radio" id="add" name="op" onclick="calc(this)">Addition<br>
+            <input type="radio" id="sub" name="op" onclick="calc(this)">Substraction<br>
+            <input type="radio" id="mul" name="op" onclick="calc(this)">Multiplication<br>
+            <input type="radio" id="div" name="op" onclick="calc(this)">Division<br>
+            <h3 id="res"></h3>
+        </form>
+        <script src="calculator.js"></script>
+    </body>
+</html>

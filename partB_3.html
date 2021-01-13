@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bakery Billing</title>
+    </head>
+    <body>
+        <input type="radio" name="food" id="cake">Cake<br>
+        <p>Enter quantity of cakes :</p>
+        <input type="number" id="ncake"><br>
+        <hr>
+        <input type="radio" name="food" id="cookie">Cookie<br>
+        <p>Enter quantity of cookies :</p>
+        <input type="number" id="ncookie"><br>
+        <h3>Note:</h3>
+        <p>per cake 100 Rs</p>
+        <p>per cookie 5 RS</p>
+        <button onclick="order()">Order</button>
+        <script>
+            function order(){
+                var ncake = document.getElementById("ncake").value;
+                var ncookie = document.getElementById("ncookie").value;
+                var cake = document.getElementById("cake").checked;
+                var cookie = document.getElementById("cookie").checked;
+
+                if(cake && ncake && intCheck(ncake))
+                    alert("Your order value : "+ncake*100+" Rs")
+                else if(cookie && ncookie && intCheck(ncookie))
+                    alert("Your order value : "+ncookie*5+" Rs")
+                else if(!cake && !cookie)
+                    alert("Choose any one item")
+                else   
+                    alert("Invalid quantity")
+            }
+
+            function intCheck(n){
+                if(n-Math.floor(n)==0)
+                    return true;
+                else
+                    return false;
+            }
+        </script>
+    </body>
+</html>
